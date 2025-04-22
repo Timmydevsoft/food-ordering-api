@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import userModel from "../models/user.model";
+import { customeError } from "../middewares/error.middleware";
 
 type Props = {
   req: Request;
@@ -32,13 +33,14 @@ const createUser = async ({ req, res, next }: Props): Promise<any> => {
   }
 };
 
-const updateCurrentUser = async ({ req, res, next }: Props): Promise<any> => {
-  const { auth0Id, name, adressLine, city, country } = req.body;
-
-  if (!auth0Id || !name || !adressLine || !city || !country) {
+const updateCurrentUser = async (req:Request, res:Response, next: NextFunction): Promise<any> => {
+  const {name, addressLine, city, country } = req.body;
+  
+  if (!name || !addressLine || !city || !country) {
     return res.status(400).json({ message: "All field required" });
    
   }
+
 
   try {
     const user = await userModel.findById(req.id);
@@ -50,7 +52,7 @@ const updateCurrentUser = async ({ req, res, next }: Props): Promise<any> => {
       {
         $set: {
           name,
-          adressLine,
+          addressLine,
           city,
           country,
         },
@@ -58,6 +60,7 @@ const updateCurrentUser = async ({ req, res, next }: Props): Promise<any> => {
       { new: true }
     );
 
+    
     return res.send({
       email: updatedUser?.email,
       name,
@@ -72,4 +75,20 @@ const updateCurrentUser = async ({ req, res, next }: Props): Promise<any> => {
   }
 };
 
-export { createUser, updateCurrentUser };
+const getUser =  async (req: Request, res: Response, next:NextFunction): Promise<any | void>=>{
+  
+  try{
+    const user = await userModel.findById(req.id).lean()
+    if(!user){
+      return next(customeError(404, "User Not found"))
+    }
+    const{auth0Id, ...rest}= user
+    return res.status(200).json(rest)
+  }
+  catch(err){
+    console.log(err)
+    return res.status(500).json({message: "somethiung went wrong"})
+  }
+}
+
+export { createUser, updateCurrentUser,getUser};

@@ -18,11 +18,7 @@ const errorHandler = (err: any, req: Request, res: Response, next: NextFunction)
     })
 }
 
-type Error={
-    status: number;
-     message: string
-}
-const customeError = ({status, message}:Error)=>{
+const customeError = (status: number, message: string)=>{
     const error = new ExtendedErorr(message, status)
     error.statusCode = status
     return error

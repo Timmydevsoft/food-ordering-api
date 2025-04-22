@@ -1,4 +1,4 @@
-import express from "express"
+import express, { NextFunction, Request, Response } from "express"
 import cors from "cors"
 import dotenv from "dotenv"
 import userRouter from "./routes/user.route"
@@ -12,6 +12,10 @@ const port = process.env.PORT || 5000
 const app = express()
 app.use(express.json())
 app.use(cors())
+
+app.get("/health", async(req: Request, res: Response)=>{
+     res.send({message: "health is OK!"})
+})
 
 app.use('/api/my', userRouter)
 app.use(errorHandler)
