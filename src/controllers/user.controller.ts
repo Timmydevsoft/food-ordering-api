@@ -7,11 +7,11 @@ type Props = {
   res: Response;
   next: NextFunction;
 };
-const createUser = async ({ req, res, next }: Props): Promise<any> => {
+const createUser = async (req: Request, res:Response, next: NextFunction ) => {
   try {
     const { auth0Id, email, name, adressLine, city, country } = req.body;
 
-    console.log(auth0Id, email);
+    // console.log(auth0Id, email);
 
     // if(!auth0Id || !email || !name || !adressLine || !city || !country){
     //     res.status(400).json({message: "All field required"})
@@ -21,7 +21,7 @@ const createUser = async ({ req, res, next }: Props): Promise<any> => {
     const existingUser = await userModel.findOne({ auth0Id });
 
     if (existingUser) {
-      res.status(200);
+     return  res.status(200);
     }
 
     const newUser = new userModel({ auth0Id, email });
@@ -33,7 +33,7 @@ const createUser = async ({ req, res, next }: Props): Promise<any> => {
   }
 };
 
-const updateCurrentUser = async (req:Request, res:Response, next: NextFunction): Promise<any> => {
+const updateCurrentUser = async (req:Request, res:Response, next: NextFunction) => {
   const {name, addressLine, city, country } = req.body;
   
   if (!name || !addressLine || !city || !country) {
@@ -75,7 +75,7 @@ const updateCurrentUser = async (req:Request, res:Response, next: NextFunction):
   }
 };
 
-const getUser =  async (req: Request, res: Response, next:NextFunction): Promise<any | void>=>{
+const getUser =  async (req: Request, res: Response, next:NextFunction)=>{
   
   try{
     const user = await userModel.findById(req.id).lean()
