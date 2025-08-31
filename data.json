@@ -1,0 +1,54 @@
+[
+    {
+      "title": "Senior MERN Stack Developer",
+      "price": 75000,
+      "description": "We're searching for a highly skilled Senior MERN Stack Developer to join our dynamic team. The ideal candidate will have extensive experience in building scalable and robust web applications using MongoDB, Express.js, React, and Node.js. You'll be responsible for the full software development lifecycle, from concept and design to testing and deployment. This role requires a strong understanding of front-end and back-end development principles, API design, and database management.\n\nBeyond technical prowess, we value problem-solving skills, attention to detail, and a collaborative spirit. You'll work closely with product managers, designers, and other engineers to deliver high-quality solutions that meet user needs and business objectives. Experience with cloud platforms (AWS, Azure, GCP), CI/CD pipelines, and agile methodologies is a significant plus. Join us and contribute to innovative projects that make a real impact!",
+      "location": "Lagos, Nigeria",
+      "datePosted": "2025-06-01T10:00:00.000Z",
+      "contract": ["Develop APIs", "Build UI", "Manage Database", "Deploy Applications"],
+      "ownerId": "60c72b2f9c9c8e0017a5a6b0",
+      "applied_workers": [],
+      "workersId": null,
+      "status": "available",
+      "date_posted": "2025-06-01T10:00:00.000Z"
+    },
+    {
+      "title": "Plumber - Emergency Service",
+      "price": 15000,
+      "description": "We are looking for an experienced and reliable plumber for emergency call-out services. This role requires a professional who can respond quickly to urgent plumbing issues, including leaks, burst pipes, blocked drains, and hot water system failures. You must possess a comprehensive understanding of plumbing systems, diagnostic abilities, and the tools necessary to perform on-the-spot repairs efficiently and effectively.\n\nCandidates should have excellent communication skills, a valid driver's license, and their own transportation. We prioritize individuals who can maintain a calm demeanor under pressure and provide exceptional customer service during stressful situations. Availability for evenings and weekends is essential. Join our team and be the hero our clients need!",
+      "location": "Abuja, Nigeria",
+      "datePosted": "2025-06-05T14:30:00.000Z",
+      "contract": ["Fix Leaks", "Clear Drains", "Repair Pipes", "Install Fixtures"],
+      "ownerId": "60c72b2f9c9c8e0017a5a6b1",
+      "applied_workers": ["60c72b2f9c9c8e0017a5a6b2"],
+      "workersId": null,
+      "status": "available",
+      "date_posted": "2025-06-05T14:30:00.000Z"
+    },
+    {
+      "title": "Graphic Designer - Brand Identity",
+      "price": 40000,
+      "description": "We are seeking a talented and creative Graphic Designer specializing in brand identity. This position involves developing compelling visual concepts, logos, brand guidelines, and marketing materials that resonate with our target audience. You'll work closely with our marketing and product teams to translate brand strategies into stunning visual assets across various platforms, including digital, print, and social media.\n\nThe ideal candidate will have a strong portfolio showcasing their expertise in branding, typography, color theory, and layout. Proficiency in Adobe Creative Suite (Photoshop, Illustrator, InDesign) is mandatory. We're looking for someone who can take initiative, offer innovative design solutions, and manage multiple projects simultaneously while adhering to deadlines. Bring your passion for design and help us shape impactful brand stories!",
+      "location": "Ibadan, Nigeria",
+      "datePosted": "2025-05-28T09:00:00.000Z",
+      "contract": ["Design Logos", "Create Layouts", "Develop Branding", "Edit Images"],
+      "ownerId": "60c72b2f9c9c8e0017a5a6b3",
+      "applied_workers": ["60c72b2f9c9c8e0017a5a6b4", "60c72b2f9c9c8e0017a5a6b5"],
+      "workersId": "60c72b2f9c9c8e0017a5a6b4",
+      "status": "assigned",
+      "date_posted": "2025-05-28T09:00:00.000Z"
+    },
+    {
+      "title": "Social Media Assistant",
+      "price": 25000,
+      "description": "We're looking for a proactive Social Media Assistant to help manage our online presence. This role involves creating engaging content, scheduling posts across various platforms, monitoring social media trends, and interacting with our audience. You'll assist in developing social media strategies to increase brand awareness and engagement. Strong writing skills and a keen eye for detail are essential.\n\nFamiliarity with social media analytics tools and content creation software is a plus. You should be able to work independently and as part of a team, bringing fresh ideas to the table. This is a great opportunity for someone passionate about digital marketing to grow their skills and contribute to our online success.",
+      "location": "Remote (Nigeria)",
+      "datePosted": "2025-06-08T11:00:00.000Z",
+      "contract": ["Create Posts", "Respond to DMs", "Schedule Content", "Monitor Trends"],
+      "ownerId": "60c72b2f9c9c8e0017a5a6b6",
+      "applied_workers": [],
+      "workersId": null,
+      "status": "available",
+      "date_posted": "2025-06-08T11:00:00.000Z"
+    }
+  ]

@@ -22,7 +22,6 @@ const customeError = (status: number, message: string)=>{
     const error = new ExtendedErorr(message, status)
     error.statusCode = status
     return error
-
 }
 
 export {errorHandler, customeError}

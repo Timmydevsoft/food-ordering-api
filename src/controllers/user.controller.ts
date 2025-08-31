@@ -2,11 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import userModel from "../models/user.model";
 import { customeError } from "../middewares/error.middleware";
 
-type Props = {
-  req: Request;
-  res: Response;
-  next: NextFunction;
-};
+
 const createUser = async (req: Request, res:Response, next: NextFunction ) => {
   try {
     const { auth0Id, email, name, adressLine, city, country } = req.body;
@@ -23,7 +19,6 @@ const createUser = async (req: Request, res:Response, next: NextFunction ) => {
     if (existingUser) {
      return  res.status(200);
     }
-
     const newUser = new userModel({ auth0Id, email });
     await newUser.save();
     return res.status(201).json(newUser.toObject());
@@ -76,7 +71,6 @@ const updateCurrentUser = async (req:Request, res:Response, next: NextFunction) 
 };
 
 const getUser =  async (req: Request, res: Response, next:NextFunction)=>{
-  
   try{
     const user = await userModel.findById(req.id).lean()
     if(!user){

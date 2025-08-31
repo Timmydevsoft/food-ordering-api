@@ -5,6 +5,7 @@ import userRouter from "./routes/user.route"
 import dbConnect from "./util/db.connect"
 import { errorHandler } from "./middewares/error.middleware"
 import myRestaurantRoute from "./routes/myrestaurant.route"
+import resaurantsRoute from "./routes/restaurants.route"
 
 dotenv.config()
 dbConnect()
@@ -21,6 +22,7 @@ app.get("/health", async(req: Request, res: Response)=>{
 
 app.use('/api/my', userRouter)
 app.use("/api/my", myRestaurantRoute)
+app.use("/api/restaurant", resaurantsRoute)
 app.use(errorHandler)
 
 

@@ -1,6 +1,6 @@
 
-import express,{Request, Response, NextFunction } from "express"
-import { body, validationResult, ExpressValidator, ValidationChain } from "express-validator"
+import {Request, Response, NextFunction } from "express"
+import { body, validationResult} from "express-validator"
 
 
 // express.Response<any, Record<string, any>>
@@ -27,7 +27,7 @@ export const validateRestaurantRequest =[
     body("country").isString().notEmpty().withMessage("country is required"),
     body("deliveryPrice").isFloat({min: 0}).notEmpty().withMessage("Delivery Price must be a positive number"),
     body("estimatedDeliveryTime").isInt({min:0}).notEmpty().withMessage("Estimated delivery time must be a positrive integer"),
-    body("cuisines").isArray().withMessage("Cuisines must be an array").not().isEmpty().withMessage("Cuisines array cannt be empty"),
+    body("cuisines").isArray().withMessage("cuisines must be an array").not().isEmpty().withMessage("Cuisines array cannt be empty"),
     body("menuItems").isArray().withMessage("Menu Items must be an array").not().isEmpty().withMessage("Cuisines array cannt be empty"),
     body("menuItems.*.name").notEmpty().withMessage("Menu item name is required"),
     body("menuItems.*.price").isFloat({min: 0}).withMessage("Menu item price is required and must be a float")
